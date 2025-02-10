@@ -290,6 +290,10 @@ function Home() {
 
             <Flex justify="center" gap={4}>
               <Button
+                target="_blank"
+                as="a"
+                rel="noopener noreferrer"
+                href="https://www.linkedin.com/in/adithyahnair"
                 leftIcon={<Linkedin size={20} />}
                 bg="whiteAlpha.50"
                 color="white"
@@ -299,6 +303,10 @@ function Home() {
                 LinkedIn
               </Button>
               <Button
+                target="_blank"
+                as="a"
+                rel="noopener noreferrer"
+                href="mailto:adithyah.nair@gmail.com"
                 leftIcon={<Mail size={20} />}
                 bg="whiteAlpha.50"
                 color="white"
@@ -308,10 +316,14 @@ function Home() {
                 Email
               </Button>
               <Button
-                bg="whiteAlpha.50"
+                as="a"
+                href="src/public/assets/resume/adithyah.nair.pdf" // Ensure the file is in the 'public/assets/' folder
+                download="Adithyah_Nair_Resume.pdf" // Sets the download filename
                 color="white"
                 _hover={{ bg: "whiteAlpha.100", transform: "translateY(-2px)" }}
                 transition="all 0.2s"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Resume
               </Button>
