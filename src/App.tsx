@@ -1,0 +1,83 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
+import { Box, Button, Container, Flex } from '@chakra-ui/react';
+import Projects from './pages/Projects';
+import ProjectDetails from './pages/ProjectDetails';
+import Blog from './pages/Blog';
+import Home from './pages/Home';
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
+    </Router>
+  );
+}
+
+function AppContent() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  return (
+    <Box minH="100vh" bg="black" color="white">
+      {/* Navigation */}
+      <Box
+        as="nav"
+        position="fixed"
+        top={0}
+        w="full"
+        bg="blackAlpha.50"
+        backdropFilter="blur(8px)"
+        zIndex={50}
+      >
+        <Container maxW="7xl" py={4}>
+          <Flex justify="space-between" align="center">
+            <Button
+              onClick={() => navigate('/')}
+              variant="ghost"
+              fontSize="2xl"
+              fontWeight="bold"
+            >
+              {'{A}'}
+            </Button>
+            <Flex gap={6}>
+              <Button
+                onClick={() => navigate('/')}
+                variant="ghost"
+                _hover={{ color: 'green.400' }}
+              >
+                Home
+              </Button>
+              <Button
+                onClick={() => navigate('/projects')}
+                variant="ghost"
+                _hover={{ color: 'green.400' }}
+              >
+                Projects
+              </Button>
+              <Button
+                onClick={() => navigate('/blog')}
+                variant="ghost"
+                _hover={{ color: 'green.400' }}
+              >
+                Blog
+              </Button>
+            </Flex>
+          </Flex>
+        </Container>
+      </Box>
+
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:id" element={<ProjectDetails />} />
+          <Route path="/blog" element={<Blog />} />
+        </Routes>
+      </AnimatePresence>
+    </Box>
+  );
+}
+
+export default App;
