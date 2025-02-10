@@ -1,11 +1,17 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
-import { Box, Button, Container, Flex } from '@chakra-ui/react';
-import Projects from './pages/Projects';
-import ProjectDetails from './pages/ProjectDetails';
-import Blog from './pages/Blog';
-import Home from './pages/Home';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
+import { Box, Button, Container, Flex, Text } from "@chakra-ui/react";
+import Projects from "./pages/Projects";
+import ProjectDetails from "./pages/ProjectDetails";
+import Blog from "./pages/Blog";
+import Home from "./pages/Home";
 
 function App() {
   return (
@@ -34,32 +40,45 @@ function AppContent() {
         <Container maxW="7xl" py={4}>
           <Flex justify="space-between" align="center">
             <Button
-              onClick={() => navigate('/')}
+              onClick={() => navigate("/")}
               variant="ghost"
               fontSize="2xl"
               fontWeight="bold"
+              color="white"
+              _hover={{ bg: "transparent" }}
             >
-              {'{A}'}
+              <Text as="span" color="gray.500">
+                {"{"}
+              </Text>
+              <Text as="span" color="white" fontWeight="bold">
+                AN
+              </Text>
+              <Text as="span" color="gray.500">
+                {"}"}
+              </Text>
             </Button>
             <Flex gap={6}>
               <Button
-                onClick={() => navigate('/')}
+                fontWeight="bold"
+                onClick={() => navigate("/")}
                 variant="ghost"
-                _hover={{ color: 'green.400' }}
+                _hover={{ color: "green.400" }}
               >
                 Home
               </Button>
               <Button
-                onClick={() => navigate('/projects')}
+                fontWeight="bold"
+                onClick={() => navigate("/projects")}
                 variant="ghost"
-                _hover={{ color: 'green.400' }}
+                _hover={{ color: "green.400" }}
               >
                 Projects
               </Button>
               <Button
-                onClick={() => navigate('/blog')}
+                fontWeight="bold"
+                onClick={() => navigate("/blog")}
                 variant="ghost"
-                _hover={{ color: 'green.400' }}
+                _hover={{ color: "green.400" }}
               >
                 Blog
               </Button>

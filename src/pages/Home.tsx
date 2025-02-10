@@ -58,27 +58,25 @@ function Home() {
                     Software Engineer.
                   </Text>
                   <Text as="span" fontWeight="bold" color="gray.500">
-                    A self-taught developer with an interest in Computer
-                    Science.
+                    CS Graduate Student @ NYU.
                   </Text>
                 </Heading>
               </Box>
 
               <VStack align="start" spacing={3}>
                 <Flex align="center" gap={2} color="gray.400">
-                  <Rocket size={20} />
-                  <Text>
-                    Currently specializing in Frontend (React / Next.js)
+                  <Text fontSize={20}>
+                    🚀 Security x AI x Blockchain x Full-Stack Enthusiast.
                   </Text>
                 </Flex>
                 <Flex align="center" gap={2} color="gray.400">
-                  <Text as="span" fontSize="lg">
+                  <Text as="span" fontSize={20}>
                     ⚡
                   </Text>
-                  <Text>
-                    Frontend Engineer at{" "}
+                  <Text fontSize={20}>
+                    Network Security Course Assistant {""}
                     <Text as="span" color="green.400">
-                      GGL
+                      NYU
                     </Text>
                   </Text>
                 </Flex>
@@ -86,6 +84,10 @@ function Home() {
 
               <Flex gap={4} mt={4}>
                 <Button
+                  target="_blank"
+                  as="a"
+                  rel="noopener noreferrer"
+                  href="https://www.github.com/adithyahnair"
                   leftIcon={<Github size={20} />}
                   bg="whiteAlpha.50"
                   color="white"
@@ -98,6 +100,10 @@ function Home() {
                   Github
                 </Button>
                 <Button
+                  target="_blank"
+                  as="a"
+                  rel="noopener noreferrer"
+                  href="https://www.linkedin.com/in/adithyahnair"
                   leftIcon={<Linkedin size={20} />}
                   bg="whiteAlpha.50"
                   color="white"
@@ -110,6 +116,10 @@ function Home() {
                   LinkedIn
                 </Button>
                 <Button
+                  target="_blank"
+                  as="a"
+                  rel="noopener noreferrer"
+                  href="mailto:adithyah.nair@gmail.com"
                   leftIcon={<Mail size={20} />}
                   bg="whiteAlpha.50"
                   color="white"
@@ -143,42 +153,27 @@ function Home() {
             >
               <VStack align="start" spacing={6} color="gray.400">
                 <Text fontSize="lg">
-                  Hey! I'm Abdul Rahman, I've been close to a computer since an
-                  early age, and been passionate about it ever since.
+                  Hey! I'm Adithyah Nair. I've been passionate about technology
+                  from an early age, which led me to explore various aspects of
+                  software development, security, and research.
                 </Text>
                 <Text fontSize="lg">
-                  I really liked to build stuff using{" "}
-                  <Link color="green.400" href="#">
-                    no-code tools
-                  </Link>{" "}
-                  back in 2010, and from that, I explored how to code myself,
-                  fast-forward to today, I do programming in various languages
-                  and technologies, and had the privilege to worked in a{" "}
-                  <Link color="green.400" href="#">
-                    Recruitment Company
-                  </Link>{" "}
-                  and a{" "}
-                  <Link color="green.400" href="#">
-                    SaaS Company
-                  </Link>
-                  . I'm interested in building something awesome with code and
-                  automate tasks with code, currently focused on{" "}
-                  <Link color="green.400" href="#">
-                    Web & Mobile Development
-                  </Link>
-                  ,{" "}
-                  <Link color="green.400" href="#">
-                    Open Source
-                  </Link>{" "}
-                  and{" "}
-                  <Link color="green.400" href="#">
-                    Competitive Programming
-                  </Link>
-                  .
+                  I specialize in mobile application development, AI & web
+                  development, computer networks, and security, while also
+                  diving into blockchain and IoT research. Over the years, I've
+                  gained experience working on high-impact projects, hackathons,
+                  and research papers, always striving to build innovative and
+                  meaningful solutions. Currently, I work as a Course Assistant
+                  for the Network Security course at NYU Tandon’s ECE
+                  department, where I help students navigate complex
+                  cybersecurity concepts.
                 </Text>
                 <Text fontSize="lg">
-                  When I'm not coding I play games with my friends, watch some
-                  show on Netflix, or if the weather's good, play basketball! 🏀
+                  Beyond my professional endeavors, I love participating in
+                  hackathons, where I push the boundaries of what’s possible
+                  with code. On a personal side, I enjoy traveling, watching
+                  shows on Netflix, and playing Karate whenever I get the
+                  chance! 🥋
                 </Text>
               </VStack>
 
@@ -192,12 +187,14 @@ function Home() {
                 </Box>
                 <Box
                   as="img"
-                  src="https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?w=800&q=80"
-                  alt="Abdul Rahman"
+                  src="src/public/assets/images/adithyah-nair.jpeg" // Ensure the image is inside the public folder
+                  alt="Adithyah Nair"
                   borderRadius="full"
-                  w="full"
-                  maxW="400px"
+                  w="400px" // Ensure width and height are equal
+                  h="400px" // Ensures it's a perfect circle
                   mx="auto"
+                  objectFit="cover" // Ensures the image fills the circular shape properly
+                  display="block"
                   position="relative"
                   zIndex={1}
                 />
@@ -213,7 +210,7 @@ function Home() {
                   📰
                 </Text>
                 <Heading as="h2" fontSize="3xl">
-                  Latest Article.
+                  Latest Top 10 Events.
                 </Heading>
               </Flex>
               <Link
@@ -222,7 +219,7 @@ function Home() {
                 fontSize="lg"
                 _hover={{ textDecoration: "none", color: "green.300" }}
               >
-                View all articles →
+                View all events →
               </Link>
             </Flex>
 
@@ -332,7 +329,7 @@ function Home() {
           borderTop="1px solid"
           borderColor="whiteAlpha.100"
         >
-          <Text mb={2}>Designed and Developed by Abdul Rahman.</Text>
+          <Text mb={2}>Designed and Developed by Adithyah Nair.</Text>
           <Text>
             Built with{" "}
             <Text as="span" color="green.400">
