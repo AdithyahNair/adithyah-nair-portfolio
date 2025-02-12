@@ -17,6 +17,40 @@ import { PageTransition } from "../components/PageTransition";
 function Home() {
   const navigate = useNavigate();
 
+  const events = [
+    {
+      title:
+        "Join Me for an Exclusive Virtual Session with Qualcomm Student Developers",
+      date: "February 6 2025",
+      readTime: "1 min read",
+      linkedinUrl:
+        "https://www.linkedin.com/posts/debeurre_join-the-qualcomm-developers-discord-server-activity-7293315460547190784-ad_Y?utm_source=share&utm_medium=member_desktop",
+    },
+    {
+      title:
+        "I attended Drew Turchin keynote on `The Next Era of DeFi` at NYU's Blackstone LaunchPad!",
+      date: "February 3 2025",
+      readTime: "2 min read",
+      linkedinUrl:
+        "https://www.linkedin.com/posts/adithyahnair_defi-blockchain-cryptocurrency-activity-7292280138413547520-Mw97?utm_source=share&utm_medium=member_desktop",
+    },
+    {
+      title:
+        "Advancing the Future of Technology with Genesis - The Exclusive Web3 Society",
+      date: "January 15 2025",
+      readTime: "2 min read",
+      linkedinUrl:
+        "https://www.linkedin.com/posts/adithyahnair_web3-blockchain-innovation-activity-7285845138906460161-2nzY?utm_source=share&utm_medium=member_desktop",
+    },
+    {
+      title: "I got my first job in the US",
+      date: "January 13 2025",
+      readTime: "1 min read",
+      linkedinUrl:
+        "https://www.linkedin.com/posts/adithyahnair_im-happy-to-share-that-im-starting-a-new-activity-7284737623321952256-a8Ah?utm_source=share&utm_medium=member_desktop",
+    },
+  ];
+
   return (
     <PageTransition>
       <Box minH="100vh" bg="black" color="white" pt={32} pb={20}>
@@ -164,13 +198,13 @@ function Home() {
                   gained experience working on high-impact projects, hackathons,
                   and research papers, always striving to build innovative and
                   meaningful solutions. Currently, I work as a Course Assistant
-                  for the Network Security course at NYU Tandon’s ECE
+                  for the Network Security course at NYU Tandon's ECE
                   department, where I help students navigate complex
                   cybersecurity concepts.
                 </Text>
                 <Text fontSize="lg">
                   Beyond my professional endeavors, I love participating in
-                  hackathons, where I push the boundaries of what’s possible
+                  hackathons, where I push the boundaries of what's possible
                   with code. On a personal side, I enjoy traveling, watching
                   shows on Netflix, and playing Karate whenever I get the
                   chance! 🥋
@@ -187,13 +221,13 @@ function Home() {
                 </Box>
                 <Box
                   as="img"
-                  src="src/public/assets/images/adithyah-nair.jpeg" // Ensure the image is inside the public folder
+                  src="src/public/assets/images/adithyah-nair.jpeg"
                   alt="Adithyah Nair"
                   borderRadius="full"
-                  w="400px" // Ensure width and height are equal
-                  h="400px" // Ensures it's a perfect circle
+                  w="350px"
+                  h="350px"
                   mx="auto"
-                  objectFit="cover" // Ensures the image fills the circular shape properly
+                  objectFit="cover"
                   display="block"
                   position="relative"
                   zIndex={1}
@@ -202,7 +236,7 @@ function Home() {
             </Grid>
           </Box>
 
-          {/* Latest Articles Section */}
+          {/* Latest Events Section */}
           <Box as="section" mt={40}>
             <Flex justify="space-between" align="center" mb={8}>
               <Flex align="center" gap={2}>
@@ -210,7 +244,7 @@ function Home() {
                   📰
                 </Text>
                 <Heading as="h2" fontSize="3xl">
-                  Latest Top 10 Events.
+                  Latest Events.
                 </Heading>
               </Flex>
               <Link
@@ -222,52 +256,39 @@ function Home() {
                 View all events →
               </Link>
             </Flex>
-
             <Grid
               templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
               gap={6}
             >
-              {[
-                {
-                  title: "2024 Retrospective",
-                  date: "January 21 2025",
-                  readTime: "6 min read",
-                },
-                {
-                  title:
-                    "Unleash Your Dev Blog: Write More with GitHub Issues as Your CMS",
-                  date: "April 2 2024",
-                  readTime: "3 min read",
-                },
-                {
-                  title: "Code Faster with Vim Shortcuts!",
-                  date: "July 18 2022",
-                  readTime: "2 min read",
-                },
-                {
-                  title: "Easily Boost Your Productivity With Code Snippets",
-                  date: "September 22 2021",
-                  readTime: "3 min read",
-                },
-              ].map((article, index) => (
-                <Box
+              {events.map((event, index) => (
+                <Link
                   key={index}
-                  bg="whiteAlpha.50"
-                  p={6}
-                  borderRadius="xl"
-                  _hover={{ bg: "whiteAlpha.100" }}
-                  transition="all 0.2s"
-                  cursor="pointer"
+                  href={event.linkedinUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  _hover={{ textDecoration: "none" }}
                 >
-                  <Heading as="h3" fontSize="xl" mb={4}>
-                    {article.title}
-                  </Heading>
-                  <Flex gap={2} color="gray.500" fontSize="sm">
-                    <Text>{article.date}</Text>
-                    <Text>•</Text>
-                    <Text>{article.readTime}</Text>
-                  </Flex>
-                </Box>
+                  <Box
+                    bg="whiteAlpha.50"
+                    p={6}
+                    borderRadius="xl"
+                    _hover={{
+                      bg: "whiteAlpha.100",
+                      transform: "translateY(-2px)",
+                    }}
+                    transition="all 0.2s"
+                    cursor="pointer"
+                  >
+                    <Heading as="h3" fontSize="xl" mb={4}>
+                      {event.title}
+                    </Heading>
+                    <Flex gap={2} color="gray.500" fontSize="sm">
+                      <Text>{event.date}</Text>
+                      <Text>•</Text>
+                      <Text>{event.readTime}</Text>
+                    </Flex>
+                  </Box>
+                </Link>
               ))}
             </Grid>
           </Box>
@@ -277,13 +298,6 @@ function Home() {
             <Heading as="h2" fontSize="6xl" mb={6}>
               Keep In Touch.
             </Heading>
-            <Text color="gray.400" fontSize="lg" mb={2}>
-              I'm currently specializing in{" "}
-              <Text as="span" color="green.400">
-                Front-end Development
-              </Text>
-              .
-            </Text>
             <Text color="gray.400" fontSize="lg" mb={8}>
               Feel free to get in touch and talk more about your projects.
             </Text>
@@ -317,8 +331,8 @@ function Home() {
               </Button>
               <Button
                 as="a"
-                href="src/public/assets/resume/adithyah.nair.pdf" // Ensure the file is in the 'public/assets/' folder
-                download="Adithyah_Nair_Resume.pdf" // Sets the download filename
+                href="src/public/assets/resume/adithyah.nair.pdf"
+                download="Adithyah_Nair_Resume.pdf"
                 color="white"
                 _hover={{ bg: "whiteAlpha.100", transform: "translateY(-2px)" }}
                 transition="all 0.2s"
