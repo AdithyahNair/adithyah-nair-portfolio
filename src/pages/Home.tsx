@@ -221,7 +221,7 @@ function Home() {
                 </Box>
                 <Box
                   as="img"
-                  src="src/public/assets/images/adithyah-nair.jpeg"
+                  src="public/assets/images/adithyah-nair.jpeg"
                   alt="Adithyah Nair"
                   borderRadius="full"
                   w="350px"
@@ -323,7 +323,7 @@ function Home() {
               </Button>
               <Button
                 as="a"
-                href="src/public/assets/resume/adithyah.nair.pdf"
+                href="public/assets/resume/adithyah.nair.pdf"
                 download="Adithyah_Nair_Resume.pdf"
                 color="white"
                 _hover={{ bg: "whiteAlpha.100", transform: "translateY(-2px)" }}
