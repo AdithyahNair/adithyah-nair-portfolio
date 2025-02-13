@@ -247,14 +247,6 @@ function Home() {
                   Latest Events.
                 </Heading>
               </Flex>
-              <Link
-                href="/blog"
-                color="green.400"
-                fontSize="lg"
-                _hover={{ textDecoration: "none", color: "green.300" }}
-              >
-                View all events →
-              </Link>
             </Flex>
             <Grid
               templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}

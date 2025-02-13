@@ -9,7 +9,6 @@ import {
 import { AnimatePresence } from "framer-motion";
 import { Box, Button, Container, Flex, Text } from "@chakra-ui/react";
 import Projects from "./pages/Projects";
-import Blog from "./pages/Blog";
 import Home from "./pages/Home";
 
 function App() {
@@ -73,14 +72,6 @@ function AppContent() {
               >
                 Projects
               </Button>
-              <Button
-                fontWeight="bold"
-                onClick={() => navigate("/blog")}
-                variant="ghost"
-                _hover={{ color: "green.400" }}
-              >
-                Events
-              </Button>
             </Flex>
           </Flex>
         </Container>
@@ -90,7 +81,6 @@ function AppContent() {
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/blog" element={<Blog />} />
         </Routes>
       </AnimatePresence>
     </Box>
