@@ -1,90 +1,36 @@
-import React from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useLocation,
-  useNavigate,
-} from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
-import { Box, Button, Container, Flex, Text } from "@chakra-ui/react";
-import Projects from "./pages/Projects";
-import Home from "./pages/Home";
+import { useEffect } from 'react';
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom';
+import { Nav } from './components/Nav';
+import { Backdrop } from './components/Backdrop';
+import { Footer } from './components/Footer';
+import Home from './pages/Home';
+import Projects from './pages/Projects';
 
 function App() {
   return (
-    <Router>
-      <AppContent />
-    </Router>
+    <BrowserRouter>
+      <ScrollToHash />
+      <Backdrop />
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 }
 
-function AppContent() {
-  const location = useLocation();
-  const navigate = useNavigate();
-
-  return (
-    <Box minH="100vh" bg="black" color="white">
-      {/* Navigation */}
-      <Box
-        as="nav"
-        position="fixed"
-        top={0}
-        w="full"
-        bg="blackAlpha.50"
-        backdropFilter="blur(8px)"
-        zIndex={50}
-      >
-        <Container maxW="7xl" py={4}>
-          <Flex justify="space-between" align="center">
-            <Button
-              onClick={() => navigate("/")}
-              variant="ghost"
-              fontSize="2xl"
-              fontWeight="bold"
-              color="white"
-              _hover={{ bg: "transparent" }}
-            >
-              <Text as="span" color="gray.500">
-                {"{"}
-              </Text>
-              <Text as="span" color="white" fontWeight="bold">
-                AN
-              </Text>
-              <Text as="span" color="gray.500">
-                {"}"}
-              </Text>
-            </Button>
-            <Flex gap={6}>
-              <Button
-                fontWeight="bold"
-                onClick={() => navigate("/")}
-                variant="ghost"
-                _hover={{ color: "green.400" }}
-              >
-                Home
-              </Button>
-              <Button
-                fontWeight="bold"
-                onClick={() => navigate("/projects")}
-                variant="ghost"
-                _hover={{ color: "green.400" }}
-              >
-                Projects
-              </Button>
-            </Flex>
-          </Flex>
-        </Container>
-      </Box>
-
-      <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
-        </Routes>
-      </AnimatePresence>
-    </Box>
-  );
+/** Scrolls to the hash target after client-side navigation (e.g. /projects → /#projects). */
+function ScrollToHash() {
+  const { hash } = useLocation();
+  useEffect(() => {
+    if (!hash) return;
+    const el = document.getElementById(hash.slice(1));
+    if (el) el.scrollIntoView({ block: 'start' });
+  }, [hash]);
+  return null;
 }
 
 export default App;
